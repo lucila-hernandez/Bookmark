@@ -1,16 +1,15 @@
 {% extends "base.html" %}
-
-{% block title %}Bookmark - Search Results{% endblock %}
+{% block body_class %}search-results{% endblock %}
 
 {% block content %}
-<div>
-    <h1 class="mt-5">Search Results</h1>
+<div class="container mt-5">
+    <h1 class="mb-4">Search Results</h1>
     {% if books %}
         <div class="list-group">
             {% for book in books %}
-                <div class="list-group-item">
+                <div class="list-group-item mb-4">
                     <h2 class="h5">{{ book.volumeInfo.title }}</h2>
-                    <p>{{ book.volumeInfo.authors | join(', ') }}</p>
+                    <p><strong>Authors:</strong> {{ book.volumeInfo.authors | join(', ') }}</p>
                     <p>{{ book.volumeInfo.description }}</p>
                 </div>
             {% endfor %}
@@ -21,4 +20,3 @@
     <a class="btn btn-secondary mt-3" href="/">Back to search</a>
 </div>
 {% endblock %}
-

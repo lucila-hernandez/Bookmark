@@ -1,20 +1,11 @@
 body {
     background-color: #F2F2F2;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
     margin: 0; 
 }
 
 h1, h2, h3, p {
     color: #3C3C40;
-}
-
-.logo-description {
-    margin-top: 0px; 
-    margin-bottom: 10px;
 }
 
 .form-control {
@@ -34,7 +25,62 @@ h1, h2, h3, p {
     border-color: #0D0D0D !important;
 }
 
+.btn-secondary {
+    background-color: #3C3C40;
+    border-color: #3C3C40;
+    color: #ffffff;
+    border-radius: 50px;
+}
+
+.btn-secondary:hover {
+    background-color: #0D0D0D;
+    border-color: #0D0D0D;
+}
+
 .logo-image {
     width: 500px; 
     margin-bottom: 0px;
+}
+
+.logo-description {
+    margin-top: 0px; 
+    margin-bottom: 10px;
+}
+
+body.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+body.search-results {
+    background-color: #F2F2F2;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.list-group-item {
+    border: 1px solid #B4B4BF;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    overflow: visible; 
+    word-wrap: break-word; 
+    max-height: none; 
+}
+
+.list-group-item h2 {
+    color: #3C3C40;
+}
+
+.list-group-item p {
+    margin-bottom: 10px;
 }
