@@ -2,8 +2,8 @@
 
 {% block content %}
     <div class="container text-center">
-        <h1 class="mt-5">Welcome to Bookmark!</h1>
-        <p class="mt-3">Your go-to app for finding and exploring books. Discover new titles, read descriptions, and find your next favorite book!</p>
+        <img src="{{ url_for('static', filename='images/logo_black_rmv.png') }}">
+        <p class="mt-3">Your go-to for finding and exploring books. Discover new titles, read descriptions, and find your next favorite book!</p>
         <form class="mt-3" action="/search" method="get">
             <div class="form-group">
                 <input type="text" class="form-control" name="query" placeholder="Type book title...">
