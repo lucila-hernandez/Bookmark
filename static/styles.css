@@ -4,12 +4,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 100vh; 
+    margin: 0; 
 }
 
 h1, h2, h3, p {
     color: #3C3C40;
+}
+
+.logo-description {
+    margin-top: 0px; 
+    margin-bottom: 10px;
 }
 
 .form-control {
@@ -31,4 +36,5 @@ h1, h2, h3, p {
 
 .logo-image {
     width: 500px; 
+    margin-bottom: 0px;
 }
