@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Bookmark - Search Results{% endblock %}
+
+{% block content %}
+<div>
+    <h1 class="mt-5">Search Results</h1>
+    {% if books %}
+        <div class="list-group">
+            {% for book in books %}
+                <div class="list-group-item">
+                    <h2 class="h5">{{ book.volumeInfo.title }}</h2>
+                    <p>{{ book.volumeInfo.authors | join(', ') }}</p>
+                    <p>{{ book.volumeInfo.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No results found. Please try again.</p>
+    {% endif %}
+    <a class="btn btn-secondary mt-3" href="/">Back to search</a>
+</div>
+{% endblock %}
+
