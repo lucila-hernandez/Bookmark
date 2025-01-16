@@ -8,18 +8,41 @@
         <div class="list-group">
             {% for book in books %}
                 <div class="list-group-item mb-4">
-                    <h2 class="h5">{{ book.volumeInfo.title }}</h2>
-                    <p><strong>Authors:</strong> {{ book.volumeInfo.authors | join(', ') }}</p>
-                    <p><strong>Publish Date:</strong> {{ book.volumeInfo.publishedDate }}</p>
-                    
-                    <button class="btn btn-info" onclick="toggleDetails('book-{{ loop.index }}')">View Details</button>
-                    
+                    <div class="d-flex align-items-center">
+                        <div class="book-cover mr-3">
+                            {% if book.volumeInfo.imageLinks %}
+                                <img src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="Book cover" class="img-fluid">
+                            {% else %}
+                                <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Placeholder" class="img-fluid">
+                            {% endif %}
+                        </div>                       
+                        <div>
+                            <h2 class="h5">{{ book.volumeInfo.title }}</h2>
+                            <p><strong>Authors:</strong> {{ book.volumeInfo.authors | join(', ') }}</p>
+                            <p><strong>Publish Date:</strong> {{ book.volumeInfo.publishedDate }}</p>
+                            <button class="btn btn-info" onclick="toggleDetails('book-{{ loop.index }}')">View Details</button>
+                        </div>
+                    </div>
+
                     <div id="book-{{ loop.index }}" class="book-details" style="display:none;">
-                        <p><strong>Description:</strong> {{ book.volumeInfo.description or 'No description available.' }}</p>
-                        {% if book.volumeInfo.imageLinks %}
-                            <img src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="Book cover" class="img-fluid">
-                        {% endif %}
-                        <a href="{{ book.volumeInfo.infoLink }}" target="_blank" class="btn btn-primary mt-3">View on Google Books</a>
+                        <div class="description">
+                            <p><strong>Description:</strong></p>
+                            <p>{{ book.volumeInfo.description or 'No description available.' }}</p>
+                            <ul>
+                                {% if book.volumeInfo.publisher %}
+                                    <li><strong>Publisher:</strong> {{ book.volumeInfo.publisher }}</li>
+                                {% endif %}
+                                {% if book.volumeInfo.pageCount %}
+                                    <li><strong>Page Count:</strong> {{ book.volumeInfo.pageCount }}</li>
+                                {% endif %}
+                                {% if book.volumeInfo.categories %}
+                                    <li><strong>Categories:</strong> {{ book.volumeInfo.categories | join(', ') }}</li>
+                                {% endif %}
+                                {% if book.volumeInfo.language %}
+                                    <li><strong>Language:</strong> {{ book.volumeInfo.language }}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
