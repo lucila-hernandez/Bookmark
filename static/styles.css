@@ -13,6 +13,22 @@ h1, h2, h3, p {
     border: 1px solid #B4B4BF;
 }
 
+.logo-image {
+    width: 500px; 
+    margin-bottom: 0px;
+}
+.logo-description {
+    margin-top: 0px; 
+    margin-bottom: 10px;
+}
+
+body.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
 .btn-primary {
     background-color: #3C3C40 !important;
     border-color: #3C3C40 !important;
