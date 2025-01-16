@@ -4,6 +4,7 @@
 #virtual environment
 venv/
 
+#key
 .env
 
 ### macOS ###
