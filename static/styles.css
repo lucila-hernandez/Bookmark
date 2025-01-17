@@ -140,10 +140,13 @@ body.home {
 }
 
 body.search-results {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('/static/images/old_background.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
+body.search-results .container {
+    min-height: 100vh; 
+}
